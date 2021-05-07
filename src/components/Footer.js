@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div class="footer-container">
-      <section class="footer-subscription">
-        {/* <p class="footer-subscription-heading">Join the adventure newsletter</p> */}
-        {/* <p class="footer-subscription-text">You can unsubscribe at anytime.</p> */}
-        {/* <div class="input-areas">
+      {/* <section class="footer-subscription"> */}
+      {/* <p class="footer-subscription-heading">Join the adventure newsletter</p> */}
+      {/* <p class="footer-subscription-text">You can unsubscribe at anytime.</p> */}
+      {/* <div class="input-areas">
           <form>
             <input
               type="email"
@@ -20,7 +20,7 @@ function Footer() {
             <Button buttonStyle="btn--outline">Subscribe</Button>
           </form>
         </div> */}
-      </section>
+      {/* </section> */}
       {/* <div class="footer-links">
         <div className="footer-link-wrapper">
           <div class="footer-link-items">
@@ -65,33 +65,16 @@ function Footer() {
           </div> */}
           {/* <small class="website-rights">TRVL</small> */}
           <div class="social-icons">
-            {/* <Link
-              class="social-icon-link facebook"
-              to="/"
-              target="_blank"
-              aria-label="Facebook"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </Link> */}
-            {/* <Link
-              class="social-icon-link instagram"
-              to="/"
-              target="_blank"
-              aria-label="Instagram"
-            >
-              <i class="fab fa-instagram"></i>
-            </Link> */}
-            <Link
+            <a
               class="social-icon-link github"
-              to="/"
+              href="https://github.com/dakshinabp"
               target="_blank"
               aria-label="GitHub"
             >
               <i class="fab fa-github" />
-            </Link>
+            </a>
             <a
               class="social-icon-link email"
-              // to="/"
               href="mailto:dakshinabp@berkeley.edu"
               target="_blank"
               aria-label="Email"

@@ -24,8 +24,7 @@ export default function About() {
         Navisens Technology, and interned for the World Financial Group. My
         experiences have allowed me to gain strong problem-solving and
         communication skills as well as learning to work in a very fast-paced
-        environment. I am very eager to apply my expertise in delivering quality
-        products and working cross-functionally amongst various teams.
+        environment.
       </p>
     </div>
   );
