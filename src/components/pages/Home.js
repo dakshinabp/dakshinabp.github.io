@@ -1,11 +1,11 @@
 import "../../App.css";
-import HeroSection from "../HeroSection";
+import MainPage from "../MainPage";
 import Footer from "../Footer";
 
 function Home() {
   return (
     <>
-      <HeroSection />
+      <MainPage />
       <Footer />
     </>
   );
