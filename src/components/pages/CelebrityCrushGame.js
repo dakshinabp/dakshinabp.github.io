@@ -167,13 +167,13 @@ export default function CelebrityCrushGame() {
       <h1>Who do you like better?</h1>
       <div class="photo-row">
         <div class="photo-column">
-          <img src={person1["photo"]} width="300" alt="dakshina" />
+          <img src={person1["photo"]} width="300" alt="person 1" />
           <button onClick={() => handlePersonClick(person1)}>
             {person1["name"]}
           </button>
         </div>
         <div class="photo-column">
-          <img src={person2["photo"]} width="300" alt="dakshina" />
+          <img src={person2["photo"]} width="300" alt="person 2" />
           <button onClick={() => handlePersonClick(person2)}>
             {person2["name"]}
           </button>
@@ -181,10 +181,5 @@ export default function CelebrityCrushGame() {
       </div>
     </div>
   );
-  if (gender === "female") {
-    return chooseCrush;
-  } else {
-    // male
-    return chooseCrush;
-  }
+  return chooseCrush;
 }
