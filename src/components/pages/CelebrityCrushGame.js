@@ -20,9 +20,8 @@ export default function CelebrityCrushGame() {
         "https://assets.teenvogue.com/photos/5ebc0700a575717f045cbda5/16:9/w_2947,h_1658,c_limit/GettyImages-1059503174.jpg",
     },
     {
-      name: "Beyonce",
-      photo:
-        "https://pyxis.nymag.com/v1/imgs/929/e92/c17cd81281788bd8b2870ce571f64419aa-beyonce-biden.rsquare.w1200.jpg",
+      name: "Beyoncé",
+      photo: "https://mediacdn.grabone.co.nz/asset/3IHXayORoB/box=970x0",
     },
     {
       name: "Deepika Padukone",
