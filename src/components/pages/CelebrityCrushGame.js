@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../../App.css";
 
 export default function CelebrityCrushGame() {
   const [gender, setGender] = useState("none");
-  const [women, setWomen] = useState([
+  const [women] = useState([
     {
       name: "Ariana Grande",
       photo:
@@ -55,24 +55,67 @@ export default function CelebrityCrushGame() {
         "https://cdn.vox-cdn.com/thumbor/YgxgsXB8HqRb49MlUIXyuL1paGg=/0x0:634x395/1200x800/filters:focal(243x73:343x173)/cdn.vox-cdn.com/uploads/chorus_image/image/69171700/Megan_Thee_Stallion.0.0.jpg",
     },
   ]);
+  const [men] = useState([
+    {
+      name: "Henry Golding",
+      photo: "https://images.moviefit.me/p/o/89543-henry-golding.jpg",
+    },
+    {
+      name: "Zayn Malik",
+      photo:
+        "https://vz.cnwimg.com/thumb-400x/wp-content/uploads/2013/08/Zayn-Malik-1.jpg",
+    },
+    {
+      name: "Harry Styles",
+      photo:
+        "https://m.media-amazon.com/images/M/MV5BMTUxMzU2MTk1OF5BMl5BanBnXkFtZTgwNzg4NjAwMzI@._V1_.jpg",
+    },
+    {
+      name: "Travis Scott",
+      photo:
+        "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ed670179e384f0007b7db8f%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1032%26cropX2%3D3642%26cropY1%3D186%26cropY2%3D2795",
+    },
+    {
+      name: "Micheal B Jordan",
+      photo:
+        "https://m.media-amazon.com/images/M/MV5BMjExOTY3NzExM15BMl5BanBnXkFtZTgwOTg1OTAzMTE@._V1_.jpg",
+    },
+    {
+      name: "Dev Patel",
+      photo: "https://api.time.com/wp-content/uploads/2015/03/dev-patel.jpg",
+    },
+    {
+      name: "Timothee Chalamet",
+      photo:
+        "https://m.media-amazon.com/images/M/MV5BOWU1Nzg0M2ItYjEzMi00ODliLThkODAtNGEyYzRkZTBmMmEzXkEyXkFqcGdeQXVyNDk2Mzk2NDg@._V1_UY1200_CR138,0,630,1200_AL_.jpg",
+    },
+    {
+      name: "Chris Evans",
+      photo:
+        "https://upload.wikimedia.org/wikipedia/commons/3/33/Mark_Kassen%2C_Tony_C%C3%A1rdenas_and_Chris_Evans_%28cropped%29.jpg",
+    },
+    {
+      name: "Justin Beiber",
+      photo:
+        "https://assets.vogue.com/photos/6053ac29a7265f514347db52/2:3/w_2984,h_4477,c_limit/Justin-Bieber-vogue-credit-Mike-Rosenthal-1.jpg",
+    },
+    {
+      name: "Chris Pine",
+      photo:
+        "https://m.media-amazon.com/images/M/MV5BMTM4OTQ4NTU3NV5BMl5BanBnXkFtZTcwNjEwNDU0OQ@@._V1_.jpg",
+    },
+  ]);
+
   const [numTimesLeft, setNumTimesLeft] = useState(5);
-  const [seenPeople, setSeenPeople] = useState(new Set([]));
-  const [pickedPerson, setPickedPerson] = useState(getRandomWoman());
+  const [pickedPerson, setPickedPerson] = useState({
+    name: "None",
+  });
   const handleFemaleClick = () => setGender("female");
   const handleMaleClick = () => setGender("male");
 
-  function handleWomenClick(pickedWoman) {
-    console.log(pickedWoman);
-    setPickedPerson(pickedWoman);
+  function handlePersonClick(pickedCrush) {
+    setPickedPerson(pickedCrush);
     setNumTimesLeft(numTimesLeft - 1);
-  }
-
-  function getRandomWoman() {
-    let randIdx = Math.floor(women.length * Math.random());
-    let result = women[randIdx];
-    women.splice(randIdx, 1);
-    console.log(women);
-    return result;
   }
 
   let chooseGender = (
@@ -87,31 +130,24 @@ export default function CelebrityCrushGame() {
     </div>
   );
 
-  let woman1 = pickedPerson;
-  let woman2 = getRandomWoman();
-  let chooseCrush = (
-    <div class="game-container">
-      <h1>Who do you like better?</h1>
-      <div class="photo-row">
-        <div class="photo-column">
-          <img src={woman1["photo"]} width="300" alt="dakshina" />
-          <button onClick={() => handleWomenClick(woman1)}>
-            {woman1["name"]}
-          </button>
-        </div>
-        <div class="photo-column">
-          <img src={woman2["photo"]} width="300" alt="dakshina" />
-          <button onClick={() => handleWomenClick(woman2)}>
-            {woman2["name"]}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+  function getRandomPerson() {
+    if (gender === "female") {
+      let randIdx = Math.floor(women.length * Math.random());
+      let result = women[randIdx];
+      women.splice(randIdx, 1);
+      return result;
+    } else {
+      // male
+      let randIdx = Math.floor(men.length * Math.random());
+      let result = men[randIdx];
+      men.splice(randIdx, 1);
+      return result;
+    }
+  }
 
   let winnerScreen = (
     <div class="game-container">
-      <h1>Your celebrity crush is...{pickedPerson["name"]}</h1>
+      <h1>Your celebrity crush is {pickedPerson["name"]}!</h1>
       <img src={pickedPerson["photo"]} width="300" alt="winner" />
     </div>
   );
@@ -122,8 +158,31 @@ export default function CelebrityCrushGame() {
 
   if (gender === "none") {
     return chooseGender;
-  } else if (gender === "female") {
-    console.log(gender);
+  }
+
+  let person1 =
+    pickedPerson["name"] === "None" ? getRandomPerson() : pickedPerson;
+  let person2 = getRandomPerson();
+  let chooseCrush = (
+    <div class="game-container">
+      <h1>Who do you like better?</h1>
+      <div class="photo-row">
+        <div class="photo-column">
+          <img src={person1["photo"]} width="300" alt="dakshina" />
+          <button onClick={() => handlePersonClick(person1)}>
+            {person1["name"]}
+          </button>
+        </div>
+        <div class="photo-column">
+          <img src={person2["photo"]} width="300" alt="dakshina" />
+          <button onClick={() => handlePersonClick(person2)}>
+            {person2["name"]}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+  if (gender === "female") {
     return chooseCrush;
   } else {
     // male
