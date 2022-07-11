@@ -1,1 +1,1 @@
-Website is live at: dakshinapalas.com
+Website is live at: dakshinapalasamudrum.com
