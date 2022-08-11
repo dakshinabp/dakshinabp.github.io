@@ -8,7 +8,7 @@ export default function About() {
       <img src={Image} width="300" alt="dakshina" />
       <h1>About Dakshina</h1>
       <p class="about-bio">
-        Hello! My name is Dakshina Palasamudrum and I am a junior at UC Berkeley
+        Hello! My name is Dakshina Palasamudrum and I am a senior at UC Berkeley
         studying Economics and Computer Science. I am originally from Edison,
         New Jersey, and am interested in the intersection between business and
         technology.
