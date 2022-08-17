@@ -31,7 +31,7 @@ function Navbar() {
             <li class="nav-item">
               <a
                 class="nav-links"
-                href="https://drive.google.com/file/d/10e60flKABe-TXX9RFWOrXRfMu_L17mjW/view?usp=sharing"
+                href="https://drive.google.com/file/d/1CZbNaqukLFei54M6c86-xC39FnnjgySJ/view?usp=sharing"
                 target="_blank"
                 onClick={closeMobileMenu}
                 rel="noreferrer"
