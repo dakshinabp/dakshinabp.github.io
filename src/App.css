@@ -35,7 +35,8 @@
 }
 
 .about-container > img {
-  margin-top: 300px;
+  margin-top: 40%;
+  border-radius: 100%;
 }
 
 .about-container > h1 {
