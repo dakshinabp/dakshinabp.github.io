@@ -12,7 +12,7 @@ function Navbar() {
       <nav class="navbar">
         <div class="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            Dakshina Palasamudrum
+            dakshina palasamudrum
           </Link>
           <div class="menu-icon" onClick={handleClick}>
             <i class={click ? "fas fa-times" : "fas fa-bars"} />
@@ -20,12 +20,12 @@ function Navbar() {
           <ul class={click ? "nav-menu active" : "nav-menu"}>
             <li class="nav-item">
               <Link to="/" class="nav-links" onClick={closeMobileMenu}>
-                Home
+                home
               </Link>
             </li>
             <li class="nav-item">
               <Link to="/about" class="nav-links" onClick={closeMobileMenu}>
-                About
+                about
               </Link>
             </li>
             <li class="nav-item">
@@ -36,12 +36,12 @@ function Navbar() {
                 onClick={closeMobileMenu}
                 rel="noreferrer"
               >
-                Resume
+                resume
               </a>
             </li>
             <li class="nav-item">
               <Link to="/projects" class="nav-links" onClick={closeMobileMenu}>
-                Projects
+                projects
               </Link>
             </li>
           </ul>
