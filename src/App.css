@@ -78,14 +78,18 @@
   padding-bottom: 10px;
 }
 
+.text > a:link {
+  justify-content:center;
+  
+}
 
-.projects {
+/* .projects {
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
-}
+} */
 
 .game-container {
   height: 100vh;
