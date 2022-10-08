@@ -25,7 +25,7 @@ function Navbar() {
             </li>
             <li class="nav-item">
               <Link to="/about" class="nav-links" onClick={closeMobileMenu}>
-                about
+                work experience
               </Link>
             </li>
             <li class="nav-item">
